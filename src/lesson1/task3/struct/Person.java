@@ -2,12 +2,12 @@ package lesson1.task3.struct;
 
 public class Person {
     private Integer age;
-    private String sex;
+    private Sex sex;
     private String name;
 
-    public Person(Integer age, String sex, String name) {
+    public Person(Integer age, String sex, String name) throws Exception {
         this.age = age;
-        this.sex = sex;
+        this.sex = new Sex(sex);
         this.name = name;
     }
 
@@ -20,11 +20,11 @@ public class Person {
     }
 
     public String getSex() {
-        return sex;
+        return sex.toString();
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setSex(String sex) throws Exception {
+        this.sex.setSex(sex);
     }
 
     public String getName() {

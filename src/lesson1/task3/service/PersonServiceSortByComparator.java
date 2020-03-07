@@ -5,9 +5,9 @@ import lesson1.task3.struct.Person;
 import java.util.Comparator;
 import java.util.List;
 
-public class PersonService implements IPersonService {
+public class PersonServiceSortByComparator implements IPersonServiceSort {
 
-    public PersonService() {}
+    public PersonServiceSortByComparator() {}
 
     @Override
     public void sortByName(List<Person> people) {
@@ -22,5 +22,12 @@ public class PersonService implements IPersonService {
     @Override
     public void sortBySex(List<Person> people) {
         people.sort(Comparator.comparing(Person::getSex));
+    }
+
+    @Override
+    public void sort(List<Person> people) {
+        sortByName(people);
+        sortByAge(people);
+        sortBySex(people);
     }
 }
